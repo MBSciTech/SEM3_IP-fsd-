@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilution Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="cc1.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Dilution Calculator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="phy.html">Physics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chem.html">Chemistry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container mt-4">
+            <h1 class="m-5 text-center">Dilution Calculator</h1>
+            <div class="grid">
+                <div class="row">
+                    <div class="col-6">
+                        <form>
+                            <label for="c1" class="form-label">Initial Concentration (C₁) in M:</label>
+                            <input class="form-control" type="number" id="c1" step="0.01">
+                            
+                            <label for="v1" class="form-label">Initial Volume (V₁) in mL:</label>
+                            <input class="form-control" type="number" id="v1" step="0.01">
+                            
+                            <label for="c2" class="form-label">Final Concentration (C₂) in M:</label>
+                            <input class="form-control" type="number" id="c2" step="0.01">
+                            
+                            <label for="v2" class="form-label">Final Volume (V₂) in mL:</label>
+                            <input class="form-control" type="number" id="v2" step="0.01">
+                            
+                            <button id="btn" class="btn btn-success mt-3 me-3" onclick="calculateDilution()" type="button">Calculate</button>
+                            <button id="reset" class="btn btn-info mt-3" type="reset">Reset</button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <p>Initial Concentration (C₁) = <span id="c1Result">-</span> M</p>
+                            <p>Initial Volume (V₁) = <span id="v1Result">-</span> mL</p>
+                            <p>Final Concentration (C₂) = <span id="c2Result">-</span> M</p>
+                            <p>Final Volume (V₂) = <span id="v2Result">-</span> mL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function calculateDilution() {
+            var c1 = parseFloat(document.getElementById("c1").value);
+            var v1 = parseFloat(document.getElementById("v1").value);
+            var c2 = parseFloat(document.getElementById("c2").value);
+            var v2 = parseFloat(document.getElementById("v2").value);
+
+            let calculatedC1 = c1, calculatedV1 = v1, calculatedC2 = c2, calculatedV2 = v2;
+
+            // Check which field is empty and calculate it
+            if (isNaN(c1) && !isNaN(v1) && !isNaN(c2) && !isNaN(v2)) {
+                calculatedC1 = (c2 * v2) / v1; // Compute C₁
+            } else if (isNaN(v1) && !isNaN(c1) && !isNaN(c2) && !isNaN(v2)) {
+                calculatedV1 = (c2 * v2) / c1; // Compute V₁
+            } else if (isNaN(c2) && !isNaN(c1) && !isNaN(v1) && !isNaN(v2)) {
+                calculatedC2 = (c1 * v1) / v2; // Compute C₂
+            } else if (isNaN(v2) && !isNaN(c1) && !isNaN(v1) && !isNaN(c2)) {
+                calculatedV2 = (c1 * v1) / c2; // Compute V₂
+            } else {
+                alert("Please leave one field empty to calculate its value.");
+                return;
+            }
+
+            // Display results
+            document.getElementById("c1Result").innerText = calculatedC1.toFixed(2) + " M";
+            document.getElementById("v1Result").innerText = calculatedV1.toFixed(2) + " mL";
+            document.getElementById("c2Result").innerText = calculatedC2.toFixed(2) + " M";
+            document.getElementById("v2Result").innerText = calculatedV2.toFixed(2) + " mL";
+        }
+    </script>
+
+</body>
+</html>

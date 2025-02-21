@@ -1,0 +1,90 @@
+Here’s a list of **9 simple and commonly used chemistry formulas** that you can use to create calculators:  
+
+### **1. Molarity (M) Calculator**  
+\[
+M = \frac{n}{V}
+\]
+- **M** = Molarity (mol/L)  
+- **n** = Moles of solute (mol)  
+- **V** = Volume of solution (L)  
+
+---
+
+### **2. Dilution Formula Calculator**  
+\[
+M_1 V_1 = M_2 V_2
+\]
+- **M₁, V₁** = Initial molarity and volume  
+- **M₂, V₂** = Final molarity and volume  
+
+---
+
+### **3. Density Calculator**  
+\[
+\rho = \frac{m}{V}
+\]
+- **ρ (Density)** = g/mL or g/cm³  
+- **m (Mass)** = g  
+- **V (Volume)** = mL or cm³  
+
+---
+
+### **4. Ideal Gas Law Calculator**  
+\[
+PV = nRT
+\]
+- **P (Pressure)** = atm  
+- **V (Volume)** = L  
+- **n (Moles of gas)**  
+- **R (Gas constant)** = 0.0821 L·atm/mol·K  
+- **T (Temperature)** = K  
+
+---
+
+### **5. pH Calculator**  
+\[
+pH = -\log [H^+]
+\]
+- **[H⁺]** = Hydrogen ion concentration (mol/L)  
+
+---
+
+### **6. Percent Composition Calculator**  
+\[
+\% \text{Composition} = \left( \frac{\text{Mass of element}}{\text{Total mass of compound}} \right) \times 100
+\]
+- **Mass of element** = g  
+- **Total mass of compound** = g  
+
+---
+
+### **7. Molecular Weight Calculator**  
+\[
+\text{Molecular Weight} = \sum (\text{Atomic Mass} \times \text{Number of Atoms})
+\]
+- Sum up atomic masses from the periodic table  
+
+---
+
+### **8. Empirical Formula Calculator**  
+1. Convert % composition to grams  
+2. Convert grams to moles  
+3. Divide by the smallest number of moles  
+4. Get the simplest whole-number ratio  
+
+---
+
+### **9. Boiling Point Elevation Calculator**  
+\[
+\Delta T_b = i K_b m
+\]
+- **ΔT_b** = Boiling point elevation  
+- **i** = Van't Hoff factor  
+- **K_b** = Boiling point elevation constant  
+- **m** = Molality (mol/kg)  
+
+---
+
+These formulas cover **solutions, gases, acids/bases, and thermodynamics**, making them useful for chemistry students.  
+
+Do you want **HTML+JS** code like before for these calculators? 🚀

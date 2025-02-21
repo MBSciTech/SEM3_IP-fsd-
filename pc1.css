@@ -1,0 +1,70 @@
+:root{
+    --danger:rgb(220, 76, 100);
+    --info:rgb(84, 180, 211);
+}
+
+main .container{
+    background-color: rgb(247, 247, 247);
+    border-radius: 16px;
+    height: 550px;
+    box-shadow: 0px 0px 50px rgba(34, 34, 34, 0.477);
+}
+
+main .container h1{
+    color: var(--danger);
+    padding-top: 30px;
+}
+
+main .container .grid .row .col-6 form{
+    padding-left:30px;
+}
+
+
+
+main .container .grid .row .col-6 div{
+    font-size:26px;
+    justify-content:center;
+    align-items:center;
+    display:grid;
+    margin-top:30px;
+}
+main .container .grid .row .col-6 div p{
+    transition: all 1s;
+    cursor: pointer;    
+    
+}
+main .container .grid .row .col-6 div p:hover{
+    transform: scale(1.1);
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.429);
+}
+
+#btn{
+    color:var(--danger);
+    box-shadow: 0 5px 0px var(--danger);
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 24px;
+}
+#btn:hover{
+    background-color: var(--danger);
+    color: white;
+    transform: translateY(5px);
+    box-shadow: 0px 0px 20px var(--danger);
+    border: none;
+    
+}   
+#reset{
+    color:var(--info);
+    box-shadow: 0 5px 0px var(--info);
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 24px;
+    width: 90px;
+}
+#reset:hover{
+    background-color: var(--info);
+    color: white;
+    transform: translateY(5px);
+    box-shadow: 0px 0px 20px var(--info);
+    border: none;
+}   

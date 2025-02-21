@@ -1,0 +1,147 @@
+:root {
+    --danger: rgb(220, 76, 100);
+    --info: rgb(84, 180, 211);
+    --success: rgb(26, 139, 86);
+    --warning: #ffc107;
+}
+
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+main .container {
+    background-color: rgb(247, 247, 247);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0px 0px 30px rgba(34, 34, 34, 0.2);
+}
+
+
+main .container h1 {
+    color: var(--warning);
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+main .container h2 {
+    color: var(--warning);
+    margin-top: 25px;
+    font-size: 1.8rem;
+}
+
+
+main .container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+main .container .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+main .container .col-md-6 {
+    flex: 0 0 48%;
+    padding: 15px;
+
+}
+main .container .col-md-6 ul li {
+    transition: all 0.5s;
+
+}
+main .container .col-md-6 ul li:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+main .container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main .container ul li {
+    background-color: var(--info);
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+main .container .row .col-md-4 {
+    flex: 0 0 32%;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+}
+main .container .row .col-md-4:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+#btn {
+    color: var(--warning);
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 24px;
+    padding: 10px 20px;
+    border: 2px solid var(--warning);
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+
+#btn:hover {
+    background-color: var(--warning);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 15px var(--warning);
+    text-decoration: none;
+}
+
+#btn2 {
+    color: var(--info);
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 24px;
+    padding: 10px 20px;
+    border: 2px solid var(--info);
+    transition: all 0.3s;
+    text-decoration: none;
+
+}
+
+#btn2:hover {
+    background-color: var(--info);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 15px var(--info)
+}
+
+
+footer {
+    background-color: var(--warning);
+    text-align: center;
+    color: black;
+    padding: 15px;
+    font-weight: bold;
+    margin-top: 40px;
+}

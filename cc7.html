@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecular Weight Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="cc1.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Molecular Weight Calculator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="phy.html">Physics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chem.html">Chemistry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container mt-4">
+            <h1 class="m-5 text-center">Molecular Weight Calculator</h1>
+            <div class="grid">
+                <div class="row">
+                    <div class="col-6">
+                        <form>
+                            <label for="formula" class="form-label">Enter Chemical Formula:</label>
+                            <input class="form-control" type="text" id="formula" placeholder="E.g., H2O, CO2, NaCl">
+                            <button id="btn" class="btn btn-success mt-3 me-3" onclick="calculateMolecularWeight()" type="button">Calculate</button>
+                            <button id="reset" class="btn btn-info mt-3" type="reset">Reset</button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                        <p class="mt-4">Molecular Weight: <span id="result">-</span></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const atomicWeights = {
+            H: 1.008, He: 4.0026, Li: 6.94, Be: 9.0122, B: 10.81, C: 12.01, N: 14.01, O: 16.00, F: 18.998,
+            Ne: 20.180, Na: 22.99, Mg: 24.305, Al: 26.982, Si: 28.085, P: 30.974, S: 32.06, Cl: 35.45, K: 39.10,
+            Ca: 40.08, Fe: 55.85, Cu: 63.55, Zn: 65.38, Ag: 107.87, Au: 196.97, Pb: 207.2
+        };
+    
+        function calculateMolecularWeight() {
+            let formula = document.getElementById("formula").value.trim();
+            if (formula === "") {
+                alert("Please enter a chemical formula.");
+                return;
+            }
+    
+            // Ensure the formula contains only valid elements
+            let regex = /([A-Z][a-z]?)(\d*)/g;
+            let match;
+            let totalWeight = 0;
+            let matchedElements = [];
+    
+            while ((match = regex.exec(formula)) !== null) {
+                let element = match[1];
+                let count = match[2] ? parseInt(match[2]) : 1;
+    
+                if (!atomicWeights.hasOwnProperty(element)) {
+                    alert(`Invalid element detected: ${element}`);
+                    document.getElementById("result").innerText = "-";
+                    return;
+                }
+    
+                matchedElements.push(element);
+                totalWeight += atomicWeights[element] * count;
+            }
+    
+            // Verify the entire formula is parsed correctly
+            let reconstructedFormula = matchedElements.join('');
+            if (reconstructedFormula.length !== formula.replace(/\d+/g, '').length) {
+                alert("Invalid chemical formula format.");
+                document.getElementById("result").innerText = "-";
+                return;
+            }
+    
+            document.getElementById("result").innerText = totalWeight.toFixed(2) + " g/mol";
+        }
+    </script>
+    
+
+</body>
+</html>
